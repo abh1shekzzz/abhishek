@@ -101,3 +101,53 @@ nav ul li a:hover {
 .section:nth-child(even) {
   background: #222;
 }
+
+/* Contact Section - White Background */
+.contact {
+  background: #fff;       /* White background */
+  color: #000;            /* Black text for readability */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact a {
+  color: #0077b5; /* Blue links for visibility */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  color: #ff4b5c; /* Highlight color on hover */
+}
+
+/* Contact Form Styling */
+.php-email-form {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.php-email-form input,
+.php-email-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.php-email-form button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4cd137;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.php-email-form button:hover {
+  background: #44bd32;
+}
