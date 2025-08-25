@@ -92,33 +92,28 @@ nav ul li a:hover {
   color: #4cd137;
 }
 
-/* Section Styling */
-.section {
-  background: #111;
-  color: #eee;
+/* IKEA style sections (About, Experience, What I’m Looking For, Contact) */
+.ikea {
+  background: #0051BA;   /* IKEA blue */
+  color: #FFCC00;        /* IKEA yellow text */
 }
 
-.section:nth-child(even) {
-  background: #222;
+/* Resume section (dark black background) */
+.resume-dark {
+  background: #000000;   /* Pure black */
+  color: #FFFFFF;        /* White text */
 }
 
-/* Contact Section - White Background */
-.contact {
-  background: #fff;       /* White background */
-  color: #000;            /* Black text for readability */
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contact a {
-  color: #0077b5; /* Blue links for visibility */
+/* Global Links */
+a {
+  color: #FF6600;        /* Orange links */
   text-decoration: none;
   font-weight: 500;
 }
 
-.contact a:hover {
+a:hover {
+  color: #FF8800;        /* Lighter orange hover */
   text-decoration: underline;
-  color: #ff4b5c; /* Highlight color on hover */
 }
 
 /* Contact Form Styling */
@@ -151,4 +146,3 @@ nav ul li a:hover {
 .php-email-form button:hover {
   background: #44bd32;
 }
-
