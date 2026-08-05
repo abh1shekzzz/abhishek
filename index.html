@@ -1,64 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>chaotic site</title>
+  <title>clone</title>
+
+  <!-- fonts (IMPORTANT) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=IBM+Plex+Mono:wght@300;400&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1 class="title glitch" data-text="hi">hi</h1>
+<!-- grid background -->
+<div class="grid-lines"></div>
 
-<!-- chaotic text -->
-<p class="random" style="top: 60px; left: 40px;">u r lazy</p>
-<p class="random" style="top: 120px; left: 500px;">i like math</p>
-<p class="random" style="top: 200px; left: 200px;">wake up</p>
-<p class="random" style="top: 300px; left: 800px;">touch grass</p>
-<p class="random" style="top: 450px; left: 100px;">build something</p>
-<p class="random" style="top: 520px; left: 600px;">discipline > motivation</p>
-<p class="random" style="top: 150px; left: 900px;">why are you here</p>
-<p class="random" style="top: 350px; left: 400px;">stop scrolling</p>
+<!-- status -->
+<div class="status-indicator">
+  <div class="status-dot"></div>
+  <div class="status-text">online</div>
+</div>
 
-<!-- buttons -->
-<button class="main-btn" onclick="randomText()">click me</button>
-<p id="output"></p>
+<!-- scattered text -->
+<div class="text-scatter">
+  <div class="scatter-text scatter-1">learning everyday</div>
+  <div class="scatter-text scatter-2">build more</div>
+  <div class="scatter-text scatter-3">consistency wins</div>
+  <div class="scatter-text scatter-4">stay focused</div>
+  <div class="scatter-text scatter-5">no excuses</div>
+  <div class="scatter-text scatter-6">create things</div>
+</div>
 
-<button class="warn-btn" onclick="alert('go study')">don't click</button>
+<!-- sections -->
+<div class="books-section">
+  <div class="books-title">books</div>
+  <div class="book-item">atomic habits</div>
+  <div class="book-item">deep work</div>
+  <div class="book-item">psychology of money</div>
+</div>
 
-<!-- cursor glow -->
-<div class="cursor"></div>
+<div class="goals-section">
+  <div class="goals-title">goals</div>
+  <div class="goal-item">build projects</div>
+  <div class="goal-item">learn coding</div>
+  <div class="goal-item">stay consistent</div>
+</div>
 
-<script>
-// random message
-function randomText() {
-  const messages = [
-    "focus", "you got this", "code more",
-    "no excuses", "start now", "keep going", "lfg"
-  ];
-  document.getElementById("output").innerText =
-    messages[Math.floor(Math.random() * messages.length)];
-}
+<div class="stats-section">
+  <div class="stats-title">stats</div>
+  <div class="stat-item">hours coded: 120</div>
+  <div class="stat-item">projects: 5</div>
+  <div class="stat-item">focus level: improving</div>
+</div>
 
-// floating movement
-const texts = document.querySelectorAll(".random");
-texts.forEach(el => {
-  let x = Math.random() * 2 - 1;
-  let y = Math.random() * 2 - 1;
+<!-- big name -->
+<main>
+  <div class="name-container">
+    <h1>abhishek</h1>
+    <h1 class="trail trail-1">abhishek</h1>
+    <h1 class="trail trail-2">abhishek</h1>
+    <h1 class="trail trail-3">abhishek</h1>
+    <h1 class="trail trail-4">abhishek</h1>
+    <h1 class="trail trail-5">abhishek</h1>
+    <h1 class="trail trail-6">abhishek</h1>
+    <h1 class="trail trail-7">abhishek</h1>
+    <h1 class="trail trail-8">abhishek</h1>
+  </div>
+</main>
 
-  setInterval(() => {
-    let rect = el.getBoundingClientRect();
-    el.style.top = (rect.top + y) + "px";
-    el.style.left = (rect.left + x) + "px";
-  }, 50);
-});
+<!-- social -->
+<div class="social-links">
+  <a href="#">github</a>
+  <a href="#">twitter</a>
+  <a href="#">email</a>
+</div>
 
-// cursor glow
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", e => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
-});
-</script>
+<!-- version -->
+<div class="version-number">v1.0</div>
+
+<!-- scroll indicator -->
+<div class="scroll-indicator">
+  <div class="scroll-text">scroll</div>
+  <div class="scroll-caret">↓</div>
+</div>
+
+<!-- scan line -->
+<div class="scan-line"></div>
 
 </body>
 </html>
