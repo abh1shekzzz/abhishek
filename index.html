@@ -1,130 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek Vinay Shukla - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>chaotic site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Abhishek Vinay Shukla</h1>
-      <p>Ex-Finance Intern, <span class="highlight">Finance Major</span> from Mumbai, India</p>
 
-      <nav>
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<h1 class="title glitch" data-text="hi">hi</h1>
 
-      <!-- Social Links -->
-      <div class="socials">
-        <a href="https://github.com/abh1shekzzz" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/shuklavabhishek" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="resume.pdf.pdf" target="_blank"><i class="fas fa-file"></i></a>
-        <a href="mailto:abhishekvshukla@proton.me"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </section>
+<!-- chaotic text -->
+<p class="random" style="top: 60px; left: 40px;">u r lazy</p>
+<p class="random" style="top: 120px; left: 500px;">i like math</p>
+<p class="random" style="top: 200px; left: 200px;">wake up</p>
+<p class="random" style="top: 300px; left: 800px;">touch grass</p>
+<p class="random" style="top: 450px; left: 100px;">build something</p>
+<p class="random" style="top: 520px; left: 600px;">discipline > motivation</p>
+<p class="random" style="top: 150px; left: 900px;">why are you here</p>
+<p class="random" style="top: 350px; left: 400px;">stop scrolling</p>
 
-  <!-- About Section -->
-  <section id="about" class="section ikea">
-    <h2>About Me</h2>
-    <p>
-      Think of Harshad Mehta but as a profound Ethics follower, that's me in corporate.<br><br>
-      More than just fancy jargon, I am a Y2 Finance Major student with a current GPA of 8.5.<br><br>
-      Actively applying for Internship Window from April-July 2026 | Full time - Onsite, Hybrid
-    </p>
+<!-- buttons -->
+<button class="main-btn" onclick="randomText()">click me</button>
+<p id="output"></p>
 
-    <h2>Experience</h2>
-    <p>
-      Finance Intern at Shree Shivam Logistic Services<br>
-      • Understood the working of Transportation Management System (TMS)<br>
-      • Identified receivables in-arrears & created debtor ageing schedules<br>
-      • Built client ledgers and reviewed fleet profitability<br>
-      • Analyzed financial reports in a logistics setup
-    </p>
+<button class="warn-btn" onclick="alert('go study')">don't click</button>
 
-    <h2>What I’m Looking For</h2>
-    <p>
-      A kid with strong work-ethic. I thrive in analytical roles and love to play the long game.  
-      Open to new responsibilities and opportunities in Fintech, Analyst, Consulting, AI, Data Science.
-    </p>
-  </section>
+<!-- cursor glow -->
+<div class="cursor"></div>
 
-  <!-- Resume Section -->
-  <section id="resume" class="section resume-dark">
-    <h2>Resume</h2>
-    <p><strong>Skills:</strong> Microsoft Excel, RStudio, Tableau, Python, MySQL, Power BI, Web3, Blockchain, DCF, Technical Analysis, German</p>
-    <p><strong>Experience:</strong> Ex-Finance Intern at Shree Shivam Logistic Services</p>
-    <p><strong>Education:</strong> Bachelor's of Business Administration - Finance</p>
-    <p>
-      📄 <a href="resume.pdf.pdf" target="_blank">Click here to view my full Resume</a>
-    </p>
-  </section>
+<script>
+// random message
+function randomText() {
+  const messages = [
+    "focus", "you got this", "code more",
+    "no excuses", "start now", "keep going", "lfg"
+  ];
+  document.getElementById("output").innerText =
+    messages[Math.floor(Math.random() * messages.length)];
+}
 
-  <!-- Contact Section -->
-  <section id="contact" class="section ikea">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me:</p>
-      </div>
+// floating movement
+const texts = document.querySelectorAll(".random");
+texts.forEach(el => {
+  let x = Math.random() * 2 - 1;
+  let y = Math.random() * 2 - 1;
 
-      <div class="contact-info">
-        <p><strong>Email:</strong> 
-          <a href="mailto:abhishekvshukla@outlook.com?subject=Message%20from%20Portfolio%20Website">
-            abhishekvshukla@outlook.com
-          </a>
-        </p>
+  setInterval(() => {
+    let rect = el.getBoundingClientRect();
+    el.style.top = (rect.top + y) + "px";
+    el.style.left = (rect.left + x) + "px";
+  }, 50);
+});
 
-        <p><strong>LinkedIn:</strong> 
-          <a href="https://www.linkedin.com/in/shuklavabhishek/" target="_blank">
-            linkedin.com/in/shuklavabhishek
-          </a>
-        </p>
-        
-        <p><strong>X:</strong> 
-          <a href="https://x.com/abhiisshekkk/" target="_blank">
-            x.com/abhiisshekkk
-          </a>
-        </p>
-        
-        <p><strong>GitHub:</strong> 
-          <a href="https://github.com/abh1shekzzz" target="_blank">
-            github.com/abh1shekzzz
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
+// cursor glow
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+});
+</script>
 
-  <!-- Contact Form -->
-  <form action="https://formspree.io/f/xkgzdeko" method="POST" class="php-email-form">
-    <div class="row">
-      <div class="form-group col-md-6">
-        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-      </div>
-      <div class="form-group col-md-6">
-        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <input type="text" name="subject" class="form-control" placeholder="Subject">
-    </div>
-    <div class="form-group">
-      <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
-    </div>
-    <div class="text-center">
-      <button type="submit">Send Message</button>
-    </div>
-  </form>
 </body>
 </html>
